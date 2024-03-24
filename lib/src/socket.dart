@@ -213,6 +213,11 @@ class Socket extends Emitter {
     };
   }
 
+  Socket closeWebsocket() {
+    _socket.close();
+    return this;
+  }
+
   Socket emit(String event, Object data, [AckCall? ack]) {
     int count = ++_counter;
     var message = new Map<String, Object>();
