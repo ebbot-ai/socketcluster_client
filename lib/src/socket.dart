@@ -130,13 +130,8 @@ class Socket extends Emitter {
     if (message == "#1") {
       sendOrAdd('#2');
     } else {
-      // print message length
-      print('[Socket] Message received: ${message?.length}');
-
       // If the message is null or empty, we don't process it
       if (message == null || message.isEmpty) {
-        print(
-            '[Socket] Received empty message, this means we ack to not lose connection with the server');
         sendOrAdd("");
         return;
       }
